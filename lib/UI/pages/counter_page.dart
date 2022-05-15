@@ -23,11 +23,13 @@ class _CounterPageState extends State<CounterPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          /*	------------------------------------- */ 
           const CustomAppMenu(),
-
+          /*	------------------------------------- */ 
+          const Spacer(),
+          /*	------------------------------------- */ 
           const Text('Contador Stateful', style: TextStyle(fontSize: 20),),
-
-
+          /*	------------------------------------- */ 
           FittedBox(
             fit: BoxFit.contain,
             child: Padding(
@@ -58,6 +60,9 @@ class _CounterPageState extends State<CounterPage> {
               ),
             ],
           ),
+          /*	------------------------------------- */ 
+          const Spacer(),
+          /*	------------------------------------- */ 
         ],
       ),
     );
