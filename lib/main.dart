@@ -1,33 +1,37 @@
-import 'package:bases_web/UI/pages/counter_provider_page.dart';
-import 'package:bases_web/layout/main_layout_page.dart';
-import 'package:bases_web/router/route_generator.dart';
 import 'package:flutter/material.dart';
 
-//FileAddresses
-import 'package:bases_web/UI/pages/pages.dart';
+import 'prueba_navigator/screens/home_screen.dart';
 
 void main() => runApp(const MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'RutasApp',
-      initialRoute: '/counter',
-      // routes:
-      //   {
-      //   '/counter' : (context) => const CounterPage(),
-      //   '/provider' : (context) => const CounterProviderPage(),
+  State<MyApp> createState() => _MyAppState();
+}
 
-      //   },
-      onGenerateRoute: RouteGenerator.generateRoute,
-      builder: (_, child) {
-        return MainLayoutPage(
-          child: child!,
-        );
-      },
-    );
+class _MyAppState extends State<MyApp> {
+  late String currentItem;
+  @override
+  Widget build(BuildContext context) {
+    // return MaterialApp.router(
+    return BooksApp();
+    // routeInformationParser: RInformationParse(),
+    // routerDelegate: Route,
+
+    // initialRoute: '/counter',
+    // routes:
+    //   {
+    //   '/counter' : (context) => const CounterPage(),
+    //   '/provider' : (context) => const CounterProviderPage(),
+
+    //   },
+    // onGenerateRoute: RouteGenerator.generateRoute,
+    // builder: (_, child) {
+    //   return MainLayoutPage(
+    //     child: child!,
+    //   );
+    // },
   }
 }
