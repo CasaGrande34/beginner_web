@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/book.dart';
-import 'details_screen.dart';
 
-class TransitionPAge extends Page {
-  final Book book;
-  
-  TransitionPAge({
-    required this.book,
-  }) : super(key: ValueKey(book));
+
+class MyAppTransitionPage extends Page {
+  final Widget child;
+
+  const MyAppTransitionPage(this.child);
   
   Route createRoute(BuildContext context) {
     return PageRouteBuilder(
@@ -18,10 +15,7 @@ class TransitionPAge extends Page {
         final curveTween = CurveTween(curve: Curves.easeInOut);
         return SlideTransition(
           position: animation.drive(curveTween).drive(tween),
-          child: BookDetailsScreen(
-            key: ValueKey(book),
-            book: book,
-          ),
+          child: child,
         );
       },
     );

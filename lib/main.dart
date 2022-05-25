@@ -1,6 +1,10 @@
+import 'package:bases_web/router/app_delegate.dart';
 import 'package:flutter/material.dart';
 
-import 'prueba_navigator/screens/home_screen.dart';
+//file addresses
+import '../router/app_infor_parse.dart';
+
+
 
 void main() => runApp(const MyApp());
 
@@ -12,26 +16,15 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  late String currentItem;
   @override
   Widget build(BuildContext context) {
-    // return MaterialApp.router(
-    return BooksApp();
-    // routeInformationParser: RInformationParse(),
-    // routerDelegate: Route,
 
-    // initialRoute: '/counter',
-    // routes:
-    //   {
-    //   '/counter' : (context) => const CounterPage(),
-    //   '/provider' : (context) => const CounterProviderPage(),
-
-    //   },
-    // onGenerateRoute: RouteGenerator.generateRoute,
-    // builder: (_, child) {
-    //   return MainLayoutPage(
-    //     child: child!,
-    //   );
-    // },
+    return MaterialApp.router(
+      title: 'Navigator 2.0',
+      routeInformationParser: MyAppInformationParser(),
+      routerDelegate: MyAppRouterDelegate(),
+      // backButtonDispatcher: ,
+      
+    );
   }
 }
