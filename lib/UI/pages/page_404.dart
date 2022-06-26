@@ -1,8 +1,10 @@
-import 'package:bases_web/UI/shared/custom_flatbutton.dart';
 import 'package:flutter/material.dart';
-
+//file addresses
+import 'package:bases_web/UI/shared/custom_flatbutton.dart';
 
 class Page404 extends StatelessWidget {
+  const Page404({Key? key}) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -12,14 +14,14 @@ class Page404 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
 
-            Text('404', 
+            const Text('404', 
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10,),
-            Text('No se encontro la pagina',
+            const SizedBox(height: 10,),
+            const Text('No se encontro la pagina',
               style: TextStyle(
                 fontSize: 20,
               ),

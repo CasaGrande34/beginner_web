@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 
 import 'app_path.dart';
 
-class MyAppInformationParser extends RouteInformationParser<Object> {
+class MyAppInformationParser extends RouteInformationParser<MyAppPath> {
   @override
   Future<MyAppPath> parseRouteInformation(
       RouteInformation routeInformation) async {
@@ -16,8 +16,7 @@ class MyAppInformationParser extends RouteInformationParser<Object> {
   }
 
   @override
-  RouteInformation? restoreRouteInformation(dynamic path) {
-
+  RouteInformation? restoreRouteInformation(MyAppPath path) {
     if (path.isUnknown) {
       return RouteInformation(location: '/404');
     }

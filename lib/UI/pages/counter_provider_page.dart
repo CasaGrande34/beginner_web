@@ -24,6 +24,7 @@ class _CounterProviderPageBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //Instancia del provider.
     final counterProvider = Provider.of<CounterProvider>(context);
 
     return Scaffold(

@@ -9,11 +9,21 @@ class RouterPageManager extends ChangeNotifier {
 
   final List<Page> _pages = [
 
-    MaterialPage(
+    const MaterialPage(
       key: ValueKey('/'),
       child: Screen1(),
     ),
 
 
   ];
+// List<Page> get pages List.unmodifiable(_pages);
+
+// void openDetails(String id){
+//   _pages.add(
+//     //  MaterialPage
+//     //   key:ValueKey(""),
+//     //   child:(),
+//   );
+ 
+// }
 }

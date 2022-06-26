@@ -6,10 +6,9 @@ import 'package:flutter/material.dart';
 //provider
 import 'package:provider/provider.dart';
 
-
-
 class MyAppRouterDelegate extends RouterDelegate<MyAppPath>
     with ChangeNotifier, PopNavigatorRouterDelegateMixin {
+
   final GlobalKey<NavigatorState> _navigatorKey = GlobalKey<NavigatorState>();
   final RouterPageManager _pageManager = RouterPageManager();
 
@@ -17,12 +16,15 @@ class MyAppRouterDelegate extends RouterDelegate<MyAppPath>
   Widget build(BuildContext context) {
     return ChangeNotifierProvider.value(
       value: _pageManager,
-      child: Navigator(
-        pages: [
-          MaterialPage(key: ValueKey('/prueba'), child: Screen1()),
-        ],
-        onPopPage: (route, result) => route.didPop(result),
-      ),
+      child: Consumer<RouterPageManager>(
+        builder: (context, pageManager, child) {
+          return Navigator(
+            pages: [
+              MaterialPage(key: ValueKey('/prueba'), child: Screen1()),
+            ],
+            onPopPage: (route, result) => route.didPop(result),
+          );
+      }),
     );
   }
 
